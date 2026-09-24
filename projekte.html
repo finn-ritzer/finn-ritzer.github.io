@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projekte | Finn Ritzer</title>
+  <meta name="description" content="Projekte von Finn Ritzer.">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <a class="sprunglink" href="#inhalt">Zum Inhalt springen</a>
+
+  <header class="kopf">
+    <div class="container kopf-innen">
+      <a class="logo" href="index.html">Finn Ritzer</a>
+      <button class="menue-knopf" aria-expanded="false" aria-controls="navigation">Menü</button>
+      <nav id="navigation" class="navigation" aria-label="Hauptnavigation">
+        <ul>
+          <li><a href="index.html">Start</a></li>
+          <li><a href="projekte.html" aria-current="page">Projekte</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inhalt" class="container">
+
+    <section class="seitenkopf">
+      <h1>Projekte</h1>
+      <p class="einleitung">Dinge, die ich gebaut habe, um etwas Neues zu lernen.</p>
+    </section>
+
+    <!-- Ein Projekt = ein <article>. Zum Hinzufügen einfach einen Block kopieren. -->
+
+    <article class="projekt">
+      <div class="projekt-kopf">
+        <h2>Diese Website</h2>
+        <span class="jahr">2026</span>
+      </div>
+      <p>
+        Meine persönliche Seite, geschrieben in reinem HTML und CSS ohne Framework.
+        Sie passt sich an Handy und Desktop an und unterstützt den dunklen Modus.
+      </p>
+      <ul class="tags">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>GitHub Pages</li>
+      </ul>
+      <p class="projekt-links">
+        <a href="https://github.com/finn-ritzer/finn-ritzer.github.io">Code auf GitHub</a>
+      </p>
+    </article>
+
+    <article class="projekt">
+      <div class="projekt-kopf">
+        <h2>Passwort-Generator</h2>
+        <span class="jahr">2026</span>
+      </div>
+      <p>
+        Erzeugt sichere Passwörter direkt im Browser. Die Zufallszahlen kommen aus
+        der Web Crypto API statt aus Math.random(), weil diese für Sicherheit
+        nicht geeignet ist.
+      </p>
+      <ul class="tags">
+        <li>JavaScript</li>
+        <li>Web Crypto API</li>
+      </ul>
+      <p class="projekt-links">
+        <a href="#">Ausprobieren</a>
+        <a href="#">Code auf GitHub</a>
+      </p>
+    </article>
+
+    <article class="projekt">
+      <div class="projekt-kopf">
+        <h2>CTF-Lösungen</h2>
+        <span class="jahr">2025</span>
+      </div>
+      <p>
+        Schritt-für-Schritt-Erklärungen zu Aufgaben aus Capture-the-Flag-Wettbewerben,
+        vor allem aus den Bereichen Web-Sicherheit und Kryptografie.
+      </p>
+      <ul class="tags">
+        <li>IT-Sicherheit</li>
+        <li>Markdown</li>
+      </ul>
+      <p class="projekt-links">
+        <a href="#">Zu den Lösungen</a>
+      </p>
+    </article>
+
+  </main>
+
+  <footer class="fuss">
+    <div class="container">
+      <p>© <span id="jahr">2026</span> Finn Ritzer. Gebaut mit HTML und CSS, gehostet auf GitHub Pages.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

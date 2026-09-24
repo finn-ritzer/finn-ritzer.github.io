@@ -1,0 +1,341 @@
+/* ==========================================================
+   style.css – bestimmt das Aussehen ALLER Seiten
+   Farben, Schriften und Breite änderst du zentral in :root.
+   ========================================================== */
+
+
+/* ---------- 1. Schriften (lokal gespeichert im Ordner fonts/) ----------
+   Lokal statt über Google Fonts: So werden keine Besucherdaten an
+   Google übertragen (wichtig für den Datenschutz in Deutschland). */
+
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("fonts/bricolage-grotesque.woff2") format("woff2");
+  font-weight: 200 800;          /* variable Schrift: alle Stärken in einer Datei */
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: url("fonts/atkinson-400.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: url("fonts/atkinson-700.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+
+/* ---------- 2. Variablen: hier passt du das Design an ---------- */
+
+:root {
+  --papier: #F3F4F1;   /* Hintergrund */
+  --tinte:  #16202E;   /* Haupttext */
+  --grau:   #5B6472;   /* Nebentext */
+  --linie:  #D5D9DE;   /* Trennlinien, Rahmen */
+  --marker: #FFE066;   /* Textmarker-Gelb */
+  --blau:   #2340D9;   /* Links und Fokus */
+
+  --schrift-titel: "Bricolage Grotesque", "Arial Narrow", sans-serif;
+  --schrift-text:  "Atkinson Hyperlegible", system-ui, sans-serif;
+
+  --breite: 44rem;     /* maximale Breite des Inhalts */
+}
+
+/* Dunkler Modus: greift automatisch, wenn das Gerät dunkel eingestellt ist */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --papier: #141A23;
+    --tinte:  #E8EAED;
+    --grau:   #9AA3B0;
+    --linie:  #2A3340;
+    --marker: #6B5A12;
+    --blau:   #9DAEFF;
+  }
+}
+
+
+/* ---------- 3. Grundlagen ---------- */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--papier);
+  color: var(--tinte);
+  font-family: var(--schrift-text);
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--blau);
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* Sichtbarer Rahmen, wenn man mit der Tastatur navigiert */
+:focus-visible {
+  outline: 3px solid var(--blau);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+h1, h2, h3 {
+  font-family: var(--schrift-titel);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: clamp(2.5rem, 8vw, 4.75rem); margin: 0 0 1.5rem; }
+h2 { font-size: 1.75rem; margin: 3.5rem 0 1rem; }
+h3 { font-size: 1.3rem;  margin: 0 0 0.5rem; }
+
+/* Zentriert den Inhalt und begrenzt die Zeilenlänge */
+.container {
+  max-width: var(--breite);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Link "Zum Inhalt springen" – nur sichtbar bei Tastaturbedienung */
+.sprunglink {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  background: var(--tinte);
+  color: var(--papier);
+  padding: 0.5rem 1rem;
+  z-index: 20;
+}
+.sprunglink:focus { top: 1rem; }
+
+
+/* ---------- 4. Kopfbereich und Navigation ---------- */
+
+.kopf {
+  position: sticky;              /* bleibt beim Scrollen oben stehen */
+  top: 0;
+  z-index: 10;
+  background: var(--papier);
+  border-bottom: 1px solid var(--linie);
+}
+
+.kopf-innen {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.logo {
+  font-family: var(--schrift-titel);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--tinte);
+  text-decoration: none;
+}
+
+.navigation ul {
+  display: flex;
+  gap: 1.75rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation a {
+  color: var(--tinte);
+  text-decoration: none;
+}
+
+.navigation a:hover {
+  text-decoration: underline;
+}
+
+/* Die aktuelle Seite bekommt einen Textmarker-Strich */
+.navigation a[aria-current="page"] {
+  background: linear-gradient(var(--marker), var(--marker)) 0 85% / 100% 0.45em no-repeat;
+}
+
+.menue-knopf {
+  display: none;                 /* auf großen Bildschirmen versteckt */
+  font: inherit;
+  color: var(--tinte);
+  background: none;
+  border: 1px solid var(--tinte);
+  border-radius: 4px;
+  padding: 0.3rem 0.9rem;
+  cursor: pointer;
+}
+
+/* Handy-Ansicht: Menü wird zum Aufklappen */
+@media (max-width: 40rem) {
+  .menue-knopf { display: block; }
+  .navigation  { display: none; width: 100%; }
+  .navigation.offen { display: block; }   /* Klasse wird von script.js gesetzt */
+
+  .navigation ul {
+    flex-direction: column;
+    gap: 0;
+  }
+  .navigation a {
+    display: inline-block;
+    padding: 0.6rem 0;
+  }
+}
+
+
+/* ---------- 5. Startseite ---------- */
+
+.intro {
+  padding: clamp(3rem, 10vw, 6rem) 0 1rem;
+}
+
+.profilbild {
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: 50%;
+  margin-bottom: 2rem;
+}
+
+/* Der Textmarker-Effekt hinter der Überschrift – das eine "Wow"-Element */
+.marker {
+  background: linear-gradient(var(--marker), var(--marker)) 0 90% / 100% 0.4em no-repeat;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  animation: marker-ziehen 0.9s 0.3s ease-out both;
+}
+
+@keyframes marker-ziehen {
+  from { background-size: 0% 0.4em; }
+}
+
+.einleitung {
+  font-size: 1.3rem;
+  color: var(--grau);
+  max-width: 34rem;
+}
+
+.liste {
+  padding-left: 1.2rem;
+}
+.liste li + li {
+  margin-top: 0.4rem;
+}
+
+
+/* ---------- 6. Projekte ---------- */
+
+.seitenkopf {
+  padding: clamp(3rem, 8vw, 5rem) 0 1rem;
+}
+
+.projekt {
+  padding: 2rem 0;
+  border-top: 1px solid var(--linie);
+}
+
+.projekt-kopf {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.projekt h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+}
+
+.jahr {
+  color: var(--grau);
+  font-variant-numeric: tabular-nums;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 1rem 0;
+  padding: 0;
+}
+
+.tags li {
+  font-size: 0.9rem;
+  color: var(--grau);
+  border: 1px solid var(--linie);
+  border-radius: 999px;
+  padding: 0.1rem 0.7rem;
+}
+
+.projekt-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 0;
+}
+
+
+/* ---------- 7. Kontakt ---------- */
+
+.kontaktwege {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+.kontaktwege li {
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--linie);
+}
+
+.kontaktwege span {
+  color: var(--grau);
+}
+
+@media (max-width: 30rem) {
+  .kontaktwege li { grid-template-columns: 1fr; gap: 0.1rem; }
+}
+
+
+/* ---------- 8. Fußbereich ---------- */
+
+.fuss {
+  margin-top: 6rem;
+  padding: 2rem 0;
+  border-top: 1px solid var(--linie);
+  color: var(--grau);
+  font-size: 0.95rem;
+}
+
+
+/* ---------- 9. Weniger Bewegung, falls im System eingestellt ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .marker { animation: none; }
+}

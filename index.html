@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Titel im Browser-Tab und in Suchergebnissen -->
+  <title>Finn Ritzer</title>
+  <meta name="description" content="Persönliche Website von Finn Ritzer: Projekte, Über mich und Kontakt.">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <a class="sprunglink" href="#inhalt">Zum Inhalt springen</a>
+
+  <!-- ============ KOPFBEREICH (auf jeder Seite gleich) ============ -->
+  <header class="kopf">
+    <div class="container kopf-innen">
+      <a class="logo" href="index.html">Finn Ritzer</a>
+      <button class="menue-knopf" aria-expanded="false" aria-controls="navigation">Menü</button>
+      <nav id="navigation" class="navigation" aria-label="Hauptnavigation">
+        <ul>
+          <!-- aria-current="page" markiert die Seite, auf der man gerade ist -->
+          <li><a href="index.html" aria-current="page">Start</a></li>
+          <li><a href="projekte.html">Projekte</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ HAUPTINHALT ============ -->
+  <main id="inhalt" class="container">
+
+    <section class="intro">
+      <!-- Eigenes Foto: Datei in images/ legen und den Dateinamen hier ändern -->
+      <img class="profilbild" src="images/profil.svg" alt="Profilbild von Finn Ritzer">
+      <h1><span class="marker">Hallo, ich bin Finn.</span></h1>
+      <p class="einleitung">
+        Ich studiere Informatik mit Schwerpunkt IT-Sicherheit und baue nebenbei
+        kleine Web-Projekte. Hier sammle ich, woran ich gerade arbeite.
+      </p>
+    </section>
+
+    <section>
+      <h2>Über mich</h2>
+      <p>
+        Hier kannst du in zwei, drei Absätzen erzählen, wer du bist: was du
+        studierst oder arbeitest, wie du zum Programmieren gekommen bist und was
+        dich daran interessiert.
+      </p>
+      <p>
+        Schreib so, wie du auch sprechen würdest. Eine persönliche Seite darf
+        persönlich klingen.
+      </p>
+    </section>
+
+    <section>
+      <h2>Woran ich gerade arbeite</h2>
+      <ul class="liste">
+        <li>Diese Website mit HTML und CSS von Grund auf bauen</li>
+        <li>Mich auf die nächste Klausur in Kryptografie vorbereiten</li>
+        <li>An CTF-Wettbewerben teilnehmen und Lösungen dokumentieren</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Projekte</h2>
+      <p>
+        Eine Auswahl meiner Arbeiten, jeweils mit Beschreibung und Link zum Code,
+        findest du auf der <a href="projekte.html">Projektseite</a>.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- ============ FUSSBEREICH (auf jeder Seite gleich) ============ -->
+  <footer class="fuss">
+    <div class="container">
+      <p>© <span id="jahr">2026</span> Finn Ritzer. Gebaut mit HTML und CSS, gehostet auf GitHub Pages.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

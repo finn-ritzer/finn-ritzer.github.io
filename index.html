@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Titel im Browser-Tab und in Suchergebnissen -->
+  <meta name="robots" content="noai, noimageai">
   <title>Finn Ritzer</title>
   <meta name="description" content="Persönliche Website von Finn Ritzer: Projekte, Über mich und Kontakt.">
   <link rel="stylesheet" href="style.css">
@@ -13,14 +13,12 @@
 
   <a class="sprunglink" href="#inhalt">Zum Inhalt springen</a>
 
-  <!-- ============ KOPFBEREICH (auf jeder Seite gleich) ============ -->
   <header class="kopf">
     <div class="container kopf-innen">
-      <a class="logo" href="index.html">Finn Ritzer</a>
+      <a class="logo" href="index.html">F.R.</a>
       <button class="menue-knopf" aria-expanded="false" aria-controls="navigation">Menü</button>
       <nav id="navigation" class="navigation" aria-label="Hauptnavigation">
         <ul>
-          <!-- aria-current="page" markiert die Seite, auf der man gerade ist -->
           <li><a href="index.html" aria-current="page">Start</a></li>
           <li><a href="projekte.html">Projekte</a></li>
           <li><a href="kontakt.html">Kontakt</a></li>
@@ -29,46 +27,32 @@
     </div>
   </header>
 
-  <!-- ============ HAUPTINHALT ============ -->
   <main id="inhalt" class="container">
 
     <section class="intro">
-      <!-- Eigenes Foto: Datei in images/ legen und den Dateinamen hier ändern -->
-      <img class="profilbild" src="images/profil.svg" alt="Profilbild von Finn Ritzer">
-      <h1><span class="marker">Hallo, ich bin Finn.</span></h1>
+      <img class="profilbild" src="images/profile.jpg" width="400" height="400" alt="Profilbild von Finn Ritzer">
+      <h1><span class="marker">Hey, ich bin Finn.</span></h1>
       <p class="einleitung">
-        Ich studiere Informatik mit Schwerpunkt IT-Sicherheit und baue nebenbei
-        kleine Web-Projekte. Hier sammle ich, woran ich gerade arbeite.
+        Ich studiere aktuell dual IT-Security an der Leibniz Fachhochschule in Hannover. In meiner Praxis bin ich in Stuttgart bei der T-Systems eingesetzt. Hier sammle ich, woran ich in meinem Studium und in meiner Freizeit gerade arbeite.
       </p>
     </section>
 
     <section>
       <h2>Über mich</h2>
       <p>
-        coming soon...
+        Ich bin IT-Security-Student mit mathematisch-technischem Schwerpunkt und interessiere mich besonders für Security Architecture, Cloud-Sicherheit und die Schnittstelle zwischen Technik und menschlichem Verhalten.
       </p>
     </section>
 
     <section>
-      <h2>Woran ich gerade arbeite</h2>
-      <ul class="liste">
-        <li>coming soon...</li>
-        <li>coming soon...</li>
-        <li>coming soon...</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Projekte</h2>
+      <h2>An diesen Dingen habe ich bereits gearbeitet</h2>
       <p>
-        coming soon...
         <a href="projekte.html">Projektseite</a>.
       </p>
     </section>
 
   </main>
 
-  <!-- ============ FUSSBEREICH (auf jeder Seite gleich) ============ -->
   <footer class="fuss">
     <div class="container">
       <p>© <span id="jahr">2026</span> Finn Ritzer. Gebaut mit HTML und CSS, gehostet auf GitHub Pages.</p>

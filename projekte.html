@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noai, noimageai">
   <title>Projekte | Finn Ritzer</title>
   <meta name="description" content="Projekte von Finn Ritzer.">
   <link rel="stylesheet" href="style.css">
@@ -33,20 +34,19 @@
       <p class="einleitung">Dinge, die ich gebaut habe, um etwas Neues zu lernen.</p>
     </section>
 
-    <!-- Ein Projekt = ein <article>. Zum Hinzufügen einfach einen Block kopieren. -->
-
     <article class="projekt">
       <div class="projekt-kopf">
         <h2>Diese Website</h2>
-        <span class="jahr">2026</span>
+        <span class="jahr">September 2026</span>
       </div>
       <p>
         Meine persönliche Seite, geschrieben in reinem HTML und CSS ohne Framework.
-        Sie passt sich an Handy und Desktop an und unterstützt den dunklen Modus.
+        Sie dient nur dazu, ein kleines Portfolio von den Dingen die ich aktuell mache darzustellen.
       </p>
       <ul class="tags">
         <li>HTML</li>
         <li>CSS</li>
+        <li>JS</li>
         <li>GitHub Pages</li>
       </ul>
       <p class="projekt-links">
@@ -56,8 +56,33 @@
 
     <article class="projekt">
       <div class="projekt-kopf">
-        <h2>coming soon...</h2>
+        <h2>Robotic Lawn Mower (RLM)</h2>
+        <span class="jahr">2025 - heute</span>
       </div>
+      <p>
+        Ich habe die Möglichkeit bekommen über drei Semester hinweg die Teamleitung für das RLM-Projekt zu übernehmen.
+        Im Zuge dessen hat unser Team aus 11 Studentinnen und Studenten einen autonomen Rasenmäher-Roboter-Prototyp entwickelt, welcher eine Reihe an Soft- und Hardware-Features bietet.
+        Der Roboter erkennt ein elektrisches Begrenzungs-Kabel durch eine selbst konzipierte Transistorschaltung, weicht durch KI-Objekterkennung welche per YOLOv26 (Ultralytics) trainings-library trainiert wurde
+        Hindernissen wie Igeln aus und fährt mit eigener Fahrlogik auf Arduino und Raspberry Pi selbstständig.
+        Gesteuert und überwacht wird er über die Web-App „MowerOS“, und eine eigene CI/CD-Pipeline auf Forgejo sichert die Qualität des Codes.
+        Gemessene Daten werden hierbei über eine Datenbanksynchronisation auf einen selbst gehosteten Proxmox Container Synchronisiert.
+      </p>
+      <img src="images/under_construction.png" alt="Picture coming soon">
+      <ul class="tags">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JS</li>
+        <li>Git</li>
+        <li>C/C++</li>
+        <li>Python</li>
+        <li>SQLAlchemy</li>
+        <li>Flask</li>
+        <li>REST API</li>
+        <li>Computer Vision</li>
+        <li>CI/CD</li>
+      </ul>
+
+
     </article>
 
   </main>

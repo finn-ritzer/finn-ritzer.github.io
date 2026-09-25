@@ -213,9 +213,11 @@ h3 { font-size: 1.3rem;  margin: 0 0 0.5rem; }
 }
 
 .profilbild {
-  width: 5.5rem;
-  height: 5.5rem;
+  width: 11rem;
+  height: 11rem;
   border-radius: 50%;
+  object-fit: cover;          /* Bild zuschneiden statt verzerren */
+  border: 2px solid var(--linie);
   margin-bottom: 2rem;
 }
 

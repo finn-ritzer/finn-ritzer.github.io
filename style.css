@@ -292,6 +292,84 @@ h3 { font-size: 1.3rem;  margin: 0 0 0.5rem; }
   padding: 0.1rem 0.7rem;
 }
 
+/* Bilder-Collage: großes Bild links, zwei kleine rechts, ein breites darunter */
+.collage {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.collage figure {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  min-height: 0;
+}
+
+.collage img {
+  width: 100%;
+  object-fit: cover;             /* zuschneiden statt verzerren */
+  border-radius: 4px;
+  background: var(--linie);      /* Platzhalterfarbe, solange das Bild lädt */
+}
+
+.collage figure:not(.collage-gross, .collage-breit) img { aspect-ratio: 1 / 1; }
+.collage .collage-breit img                             { aspect-ratio: 16 / 9; }
+
+/* Das große Bild füllt die Höhe der beiden kleinen Bilder daneben */
+.collage-gross {
+  grid-row: span 2;
+}
+.collage-gross img {
+  flex: 1 1 0;
+  height: 0;
+  min-height: 0;
+}
+
+.collage-breit {
+  grid-column: 1 / -1;
+}
+
+/* Zwei GIFs nebeneinander, gleich hoch zugeschnitten */
+.clips {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.clips figure {
+  margin: 0;
+}
+
+.clips img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 4px;
+  background: var(--linie);
+}
+
+@media (max-width: 30rem) {
+  .clips { grid-template-columns: 1fr; gap: 0.75rem; }
+}
+
+.collage figcaption,
+.clips figcaption {
+  margin-top: 0.4rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--grau);
+}
+
+/* Handy: großes Bild oben, die zwei kleinen nebeneinander */
+@media (max-width: 40rem) {
+  .collage { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .collage-gross { grid-column: 1 / -1; grid-row: auto; }
+  .collage-gross img { flex: none; height: auto; aspect-ratio: 1 / 1; }
+}
+
 .projekt-links {
   display: flex;
   flex-wrap: wrap;

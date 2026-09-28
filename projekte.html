@@ -15,7 +15,7 @@
 
   <header class="kopf">
     <div class="container kopf-innen">
-      <a class="logo" href="index.html">Finn Ritzer</a>
+      <a class="logo" href="index.html">F.R.</a>
       <button class="menue-knopf" aria-expanded="false" aria-controls="navigation">Menü</button>
       <nav id="navigation" class="navigation" aria-label="Hauptnavigation">
         <ul>
@@ -60,14 +60,39 @@
         <span class="jahr">2025 - heute</span>
       </div>
       <p>
-        Ich habe die Möglichkeit bekommen über drei Semester hinweg die Teamleitung für das RLM-Projekt zu übernehmen.
+        Ich habe die Möglichkeit bekommen über drei Semester hinweg die Teamleitung für das RLM-Projekt zu übernehmen und an verschiedensten Aufgaben mitzuwirken.
         Im Zuge dessen hat unser Team aus 11 Studentinnen und Studenten einen autonomen Rasenmäher-Roboter-Prototyp entwickelt, welcher eine Reihe an Soft- und Hardware-Features bietet.
         Der Roboter erkennt ein elektrisches Begrenzungs-Kabel durch eine selbst konzipierte Transistorschaltung, weicht durch KI-Objekterkennung welche per YOLOv26 (Ultralytics) trainings-library trainiert wurde
         Hindernissen wie Igeln aus und fährt mit eigener Fahrlogik auf Arduino und Raspberry Pi selbstständig.
         Gesteuert und überwacht wird er über die Web-App „MowerOS“, und eine eigene CI/CD-Pipeline auf Forgejo sichert die Qualität des Codes.
         Gemessene Daten werden hierbei über eine Datenbanksynchronisation auf einen selbst gehosteten Proxmox Container Synchronisiert.
       </p>
-      <img src="images/under_construction.png" alt="Picture coming soon">
+      <div class="collage">
+        <figure class="collage-gross">
+          <img src="images/roboter_whole.jpeg" alt="Der ganze Rasenmäher-Roboter" width="4284" height="4572" loading="lazy">
+          <figcaption>Der ganze Roboter</figcaption>
+        </figure>
+        <figure>
+          <img src="images/rpi5.jpeg" alt="Raspberry Pi 5 im Roboter" width="3024" height="4032" loading="lazy">
+          <figcaption>Raspberry Pi 5</figcaption>
+        </figure>
+        <figure>
+          <img src="images/camera.jpeg" alt="Kamera für die KI-Objekterkennung" width="3024" height="4032" loading="lazy">
+          <figcaption>Kamera für die KI-Objekterkennung</figcaption>
+        </figure>
+      </div>
+
+      <div class="clips">
+        <figure>
+          <img src="videos/IMG_4142.gif" alt="Der Roboter fährt über den Kunstrasen" width="360" height="328" loading="lazy">
+          <figcaption>Igel Erkennung</figcaption>
+        </figure>
+        <figure>
+          <img src="videos/IMG_4180.gif" alt="Der Roboter fährt über den Kunstrasen, von oben gefilmt" width="360" height="266" loading="lazy">
+          <figcaption>Vordefinierte Bahnen fahren</figcaption>
+        </figure>
+      </div>
+
       <ul class="tags">
         <li>HTML</li>
         <li>CSS</li>
@@ -81,10 +106,7 @@
         <li>Computer Vision</li>
         <li>CI/CD</li>
       </ul>
-
-
     </article>
-
   </main>
 
   <footer class="fuss">
